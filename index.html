@@ -7,59 +7,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-main: #e9f7f8;
-  --accent1: #05c1ff;
-  --accent2: #ff4ecf;
-  --accent3: #ffca3a;
-  --text-dark: #222;
+  --bg: #f5f7fa;
+  --grid: rgba(0,0,0,0.04);
+  --accent1: #00b8ff;
+  --accent2: #ff4fcf;
+  --accent3: #ffc93c;
+  --text: #111;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html,body{scroll-behavior:smooth;font-family:'VT323',monospace;color:var(--text-dark);background:var(--bg-main);}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{scroll-behavior:smooth;font-family:'VT323',monospace;background:var(--bg);color:var(--text);}
 body::before{
-  content:"";position:fixed;inset:0;
-  background-image:linear-gradient(to right,rgba(0,0,0,0.05) 1px,transparent 1px),
-                   linear-gradient(to bottom,rgba(0,0,0,0.05) 1px,transparent 1px);
-  background-size:40px 40px;
-  z-index:-1;
+  content:"";position:fixed;inset:0;z-index:-1;
+  background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),
+                   linear-gradient(to bottom,var(--grid) 1px,transparent 1px);
+  background-size:36px 36px;
 }
 nav{
-  position:fixed;top:0;width:100%;background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(6px);border-bottom:3px solid var(--accent1);
-  display:flex;justify-content:center;gap:1.5rem;padding:.7rem;z-index:10;
+  display:flex;justify-content:center;gap:1rem;padding:.6rem 0;
+  background:#fff;border-bottom:2px solid var(--accent1);
+  position:sticky;top:0;z-index:5;
 }
 nav a{
-  text-decoration:none;color:var(--text-dark);
+  text-decoration:none;color:var(--text);
   font-family:'Press Start 2P';font-size:.6rem;transition:.2s;
 }
 nav a:hover{color:var(--accent2);}
-section{padding:5rem 1rem 3rem;max-width:900px;margin:auto;}
+section{padding:2rem 1rem;max-width:850px;margin:auto;}
 h2{
-  font-family:'Press Start 2P';font-size:1rem;color:var(--accent2);
-  margin-bottom:1.2rem;border-bottom:2px solid var(--accent3);
-  display:inline-block;padding-bottom:.3rem;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Press Start 2P';font-size:.9rem;color:var(--accent2);
+  margin-bottom:.9rem;border-bottom:2px solid var(--accent3);
+  display:inline-block;padding-bottom:.2rem;letter-spacing:1px;
 }
-p,li{font-size:1.2rem;line-height:1.6;}
-ul{list-style:square;margin-left:2rem;margin-top:.5rem;}
+.card{
+  background:#fff;border:2px solid var(--accent1);
+  box-shadow:3px 3px 0 var(--accent2);
+  padding:1rem;margin-bottom:1rem;border-radius:6px;
+}
+p,li{font-size:1.1rem;line-height:1.5;}
+ul{margin-left:1.5rem;margin-top:.3rem;}
 .hero{
-  height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;
-  background:linear-gradient(180deg,#fff 0%,#e9f7f8 100%);
-  border-bottom:3px dashed var(--accent3);
+  text-align:center;padding:3rem 1rem 2rem;
+  border-bottom:2px dashed var(--accent3);
+  background:linear-gradient(180deg,#fff 0%,#f5f7fa 100%);
 }
 .typewriter{
-  font-family:'Press Start 2P';font-size:.9rem;color:var(--accent1);
-  white-space:nowrap;overflow:hidden;border-right:4px solid var(--accent2);
+  font-family:'Press Start 2P';
+  color:var(--accent1);
+  font-size:.8rem;
+  overflow:hidden;white-space:nowrap;
+  border-right:3px solid var(--accent2);
+  display:inline-block;
   animation:typing 4s steps(40,end),blink .9s step-end infinite alternate;
 }
 @keyframes typing{from{width:0}to{width:100%}}
 @keyframes blink{50%{border-color:transparent}}
-.card{
-  background:#fff;border:2px solid var(--accent1);
-  border-radius:8px;box-shadow:4px 4px 0 var(--accent2);
-  padding:1.5rem;margin-bottom:1.5rem;
-}
 footer{
-  text-align:center;font-size:.9rem;padding:2rem 1rem;background:#fff;
-  border-top:3px solid var(--accent3);margin-top:2rem;
+  text-align:center;font-size:.9rem;padding:1rem;background:#fff;
+  border-top:2px solid var(--accent3);margin-top:1rem;
 }
 a.link{color:var(--accent1);text-decoration:none;}
 a.link:hover{text-decoration:underline;color:var(--accent2);}
@@ -76,18 +80,18 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
 </nav>
 
 <section class="hero">
-  <div class="typewriter">hello! i'm atul anilkumar — ai & ml researcher</div>
+  <div class="typewriter">hello, i'm Atul Anilkumar — AI & ML researcher</div>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
   <div class="card">
     <strong>Assistant Professor (On-Contract)</strong><br>
-    School of Artificial Intelligence & Robotics, Mahatma Gandhi University, Athirampuzha<br>
+    School of Artificial Intelligence & Robotics, Mahatma Gandhi University<br>
     <em>(Aug 2025 – Present)</em>
     <ul>
-      <li>Teaching courses in Artificial Intelligence and Robotics.</li>
-      <li>Supervising projects in Deep Learning and Applied AI.</li>
+      <li>Teaching undergraduate and postgraduate AI courses.</li>
+      <li>Supervising deep learning and robotics research.</li>
     </ul>
   </div>
   <div class="card">
@@ -95,8 +99,8 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
     School of Artificial Intelligence & Robotics, Mahatma Gandhi University<br>
     <em>(Dec 2024 – Aug 2025)</em>
     <ul>
-      <li>System admin for NVIDIA DGX Station A100 on Linux.</li>
-      <li>Supported AI research and robotics development.</li>
+      <li>Managed NVIDIA DGX Station A100 (Linux environment).</li>
+      <li>Supported AI-based research and student projects.</li>
     </ul>
   </div>
 </section>
@@ -104,12 +108,10 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
 <section id="education">
   <h2>Education</h2>
   <div class="card">
-    <p><strong>M.Sc. Computer Science</strong><br>
-    School of Computer Sciences, Mahatma Gandhi University (2022–2024)</p>
+    <strong>M.Sc. Computer Science</strong> — School of Computer Sciences, Mahatma Gandhi University (2022–2024)
   </div>
   <div class="card">
-    <p><strong>B.Sc. Computer Science</strong><br>
-    College of Applied Sciences (IHRD), Puthuppally (2019–2022)</p>
+    <strong>B.Sc. Computer Science</strong> — College of Applied Sciences (IHRD), Puthuppally (2019–2022)
   </div>
 </section>
 
@@ -118,9 +120,9 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
   <div class="card">
     <ul>
       <li><strong>Programming:</strong> C++, Python, Java</li>
-      <li><strong>AI / ML:</strong> PyTorch, TensorFlow, CUDA, NumPy, Pandas, Scikit-learn, Matlab</li>
-      <li><strong>Web Development:</strong> HTML, CSS, Bootstrap, React.js, Node.js, MySQL</li>
-      <li><strong>Soft Skills:</strong> Time Management, Problem Solving, Leadership, Analytical Thinking</li>
+      <li><strong>AI / ML:</strong> PyTorch, TensorFlow, CUDA, NumPy, Pandas, Scikit-learn</li>
+      <li><strong>Web:</strong> HTML, CSS, Bootstrap, React.js, Node.js, MySQL</li>
+      <li><strong>Soft Skills:</strong> Problem Solving, Leadership, Analytical Thinking</li>
     </ul>
   </div>
 </section>
@@ -130,30 +132,22 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
   <div class="card">
     <strong>AI-Driven Multi-Modal Analysis for NAFLD Detection</strong>
     <ul>
-      <li>Framework for automated NAFLD detection & risk prediction using AI.</li>
-      <li>Used XGBoost & deep learning architectures (ViT, Mamba).</li>
-      <li><em>Tech:</em> Python, PyTorch, XGBoost, NumPy, Matplotlib</li>
+      <li>Framework for automated NAFLD risk prediction using AI.</li>
+      <li><em>Tech:</em> Python, PyTorch, XGBoost</li>
     </ul>
   </div>
   <div class="card">
     <strong>Deep Attentional Guided Image Filtering</strong>
     <ul>
-      <li>CNN model for edge & structure detection using guidance images.</li>
-      <li><em>Tech:</em> Python, TensorFlow, ResNet</li>
+      <li>CNN-based approach for guided image filtering.</li>
+      <li><em>Tech:</em> TensorFlow, ResNet</li>
     </ul>
   </div>
   <div class="card">
     <strong>Attendance Management System</strong>
     <ul>
-      <li>Java project for attendance and leave management with visualization.</li>
-      <li><em>Tech:</em> Java, NetBeans, MySQL, HTML, CSS</li>
-    </ul>
-  </div>
-  <div class="card">
-    <strong>Online Grocery Store</strong>
-    <ul>
-      <li>Web-based e-commerce system with cart and e-payment.</li>
-      <li><em>Tech:</em> Python, MySQL, HTML, CSS</li>
+      <li>Java-based attendance and record tracking system.</li>
+      <li><em>Tech:</em> Java, MySQL</li>
     </ul>
   </div>
 </section>
@@ -162,11 +156,11 @@ a.link:hover{text-decoration:underline;color:var(--accent2);}
   <h2>Contact</h2>
   <div class="card">
     <p>📍 Arpookara, Kottayam, Kerala, India</p>
-    <p>🌐 Website: <a class="link" href="https://www.atulanil.in">www.atulanil.in</a></p>
-    <p>✉️ Email: <a class="link" href="mailto:atulanilkumar@gmail.com">atulanilkumar@gmail.com</a></p>
+    <p>🌐 <a class="link" href="https://www.atulanil.in">www.atulanil.in</a></p>
+    <p>✉️ <a class="link" href="mailto:atulanilkumar@gmail.com">atulanilkumar@gmail.com</a></p>
   </div>
 </section>
 
-<footer>© 2025 Atul Anilkumar — Designed in bright 90s retro style 🎨</footer>
+<footer>© 2025 Atul Anilkumar</footer>
 </body>
 </html>
