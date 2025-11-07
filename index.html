@@ -1,198 +1,172 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Retro — Hello My Name Is Atul Anil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1:#0f1022;
-      --bg2:#041426;
-      --neon1:#00f0ff;
-      --neon2:#ff55ff;
-      --accent:#ffd166;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'VT323', monospace;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,85,170,0.06), transparent),
-                  radial-gradient(900px 400px at 90% 90%, rgba(0,240,255,0.03), transparent),
-                  linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
-      color:var(--neon1);
-      display:grid;
-      place-items:center;
-      padding:3rem;
-      overflow:hidden;
-    }
-
-    /* retro screen container */
-    .screen{
-      width:min(900px,92vw);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-      border-radius:18px;
-      padding:2.25rem 2.5rem;
-      box-shadow: 0 20px 50px rgba(3,6,20,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
-      position:relative;
-      border:1px solid rgba(255,255,255,0.04);
-      backdrop-filter: blur(4px) saturate(120%);
-    }
-
-    /* CRT scanlines */
-    .screen::before{
-      content:"";
-      position:absolute;inset:0;
-      background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size:100% 4px;
-      pointer-events:none;
-      mix-blend-mode:overlay;
-      border-radius:18px;
-    }
-
-    /* neon outline */
-    .screen::after{
-      content:"";
-      position:absolute;inset:1.5rem;
-      border-radius:14px;
-      box-shadow: 0 0 40px rgba(0,240,255,0.06), 0 0 80px rgba(255,85,170,0.03) inset;
-      pointer-events:none;
-    }
-
-    header{
-      display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;
-    }
-    .badge{
-      font-family:'Press Start 2P', monospace;
-      font-size:.63rem;
-      letter-spacing:1px;
-      color:var(--accent);
-      padding:.35rem .6rem;
-      border-radius:6px;
-      background:linear-gradient(90deg, rgba(255,209,102,0.07), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,209,102,0.06);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-    }
-
-    h1{
-      margin:0;
-      font-family:'Press Start 2P', monospace;
-      font-size:clamp(18px,3.8vw,38px);
-      letter-spacing:2px;
-      text-transform:uppercase;
-      color:var(--neon1);
-      text-shadow: 0 2px 0 rgba(0,0,0,0.6), 0 0 8px rgba(0,240,255,0.25), 0 0 18px rgba(0,240,255,0.12);
-    }
-
-    .message{
-      margin-top:1.25rem;
-      font-size:clamp(18px,3.2vw,32px);
-      line-height:1.1;
-      text-transform:lowercase;
-      color:var(--neon2);
-      letter-spacing:1px;
-      padding:.8rem 1rem;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(255,85,170,0.03), rgba(0,0,0,0.02));
-      box-shadow: 0 8px 30px rgba(255,85,170,0.02);
-      display:inline-block;
-      position:relative;
-      min-width:60%;
-    }
-
-    /* glowy text effect */
-    .message .text{
-      font-family:'Press Start 2P', monospace;
-      font-size:1.1rem;
-      color:transparent;
-      -webkit-text-stroke: .8px rgba(255,255,255,0.06);
-      background:linear-gradient(90deg,var(--neon2),var(--neon1));
-      -webkit-background-clip:text;
-      background-clip:text;
-      text-shadow: 0 0 14px rgba(255,85,170,0.18), 0 0 36px rgba(0,240,255,0.12);
-      display:inline-block;
-      white-space:nowrap;
-      overflow:hidden;
-    }
-
-    /* typewriter caret */
-    .caret{
-      display:inline-block;
-      width:10px;
-      height:1.4em;
-      background:linear-gradient(var(--neon2),var(--neon1));
-      margin-left:6px;
-      vertical-align:middle;
-      animation:blink 1s steps(1) infinite;
-    }
-    @keyframes blink{50%{opacity:.1}}
-
-    /* small footer */
-    footer{
-      margin-top:2rem;
-      display:flex;gap:1rem;align-items:center;font-size:.78rem;color:#9aaecb;opacity:.9
-    }
-    .retro-btn{
-      font-family:'Press Start 2P',monospace;
-      padding:.6rem .9rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
-      background:transparent;cursor:pointer;letter-spacing:.6px;color:inherit;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .retro-btn:active{transform:translateY(2px)}
-
-    /* responsive tweaks */
-    @media (max-width:520px){
-      .message{font-size:16px;min-width:100%}
-      header{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Atul Anilkumar — AI & ML Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-main: #e9f7f8;
+  --accent1: #05c1ff;
+  --accent2: #ff4ecf;
+  --accent3: #ffca3a;
+  --text-dark: #222;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{scroll-behavior:smooth;font-family:'VT323',monospace;color:var(--text-dark);background:var(--bg-main);}
+body::before{
+  content:"";position:fixed;inset:0;
+  background-image:linear-gradient(to right,rgba(0,0,0,0.05) 1px,transparent 1px),
+                   linear-gradient(to bottom,rgba(0,0,0,0.05) 1px,transparent 1px);
+  background-size:40px 40px;
+  z-index:-1;
+}
+nav{
+  position:fixed;top:0;width:100%;background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(6px);border-bottom:3px solid var(--accent1);
+  display:flex;justify-content:center;gap:1.5rem;padding:.7rem;z-index:10;
+}
+nav a{
+  text-decoration:none;color:var(--text-dark);
+  font-family:'Press Start 2P';font-size:.6rem;transition:.2s;
+}
+nav a:hover{color:var(--accent2);}
+section{padding:5rem 1rem 3rem;max-width:900px;margin:auto;}
+h2{
+  font-family:'Press Start 2P';font-size:1rem;color:var(--accent2);
+  margin-bottom:1.2rem;border-bottom:2px solid var(--accent3);
+  display:inline-block;padding-bottom:.3rem;letter-spacing:2px;text-transform:uppercase;
+}
+p,li{font-size:1.2rem;line-height:1.6;}
+ul{list-style:square;margin-left:2rem;margin-top:.5rem;}
+.hero{
+  height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;
+  background:linear-gradient(180deg,#fff 0%,#e9f7f8 100%);
+  border-bottom:3px dashed var(--accent3);
+}
+.typewriter{
+  font-family:'Press Start 2P';font-size:.9rem;color:var(--accent1);
+  white-space:nowrap;overflow:hidden;border-right:4px solid var(--accent2);
+  animation:typing 4s steps(40,end),blink .9s step-end infinite alternate;
+}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+.card{
+  background:#fff;border:2px solid var(--accent1);
+  border-radius:8px;box-shadow:4px 4px 0 var(--accent2);
+  padding:1.5rem;margin-bottom:1.5rem;
+}
+footer{
+  text-align:center;font-size:.9rem;padding:2rem 1rem;background:#fff;
+  border-top:3px solid var(--accent3);margin-top:2rem;
+}
+a.link{color:var(--accent1);text-decoration:none;}
+a.link:hover{text-decoration:underline;color:var(--accent2);}
+</style>
 </head>
 <body>
-  <div class="screen" role="region" aria-label="Retro greeting card">
-    <header>
-      <div class="badge">SYSTEM v1984</div>
-      <h1>greetings</h1>
-    </header>
 
-    <div class="message" aria-live="polite">
-      <span class="text" id="type-target"></span><span class="caret" aria-hidden="true"></span>
-    </div>
+<nav>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <footer>
-      <button class="retro-btn" id="replay">replay</button>
-      <div style="opacity:.85">M.Sc. Computer Science • </div>
-    </footer>
+<section class="hero">
+  <div class="typewriter">hello! i'm atul anilkumar — ai & ml researcher</div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="card">
+    <strong>Assistant Professor (On-Contract)</strong><br>
+    School of Artificial Intelligence & Robotics, Mahatma Gandhi University, Athirampuzha<br>
+    <em>(Aug 2025 – Present)</em>
+    <ul>
+      <li>Teaching courses in Artificial Intelligence and Robotics.</li>
+      <li>Supervising projects in Deep Learning and Applied AI.</li>
+    </ul>
   </div>
+  <div class="card">
+    <strong>Technical Assistant (On-Contract)</strong><br>
+    School of Artificial Intelligence & Robotics, Mahatma Gandhi University<br>
+    <em>(Dec 2024 – Aug 2025)</em>
+    <ul>
+      <li>System admin for NVIDIA DGX Station A100 on Linux.</li>
+      <li>Supported AI research and robotics development.</li>
+    </ul>
+  </div>
+</section>
 
-  <script>
-    // The sentence to display (exact as user requested)
-    const sentence = 'hello my name is atul anil';
-    const target = document.getElementById('type-target');
-    const replay = document.getElementById('replay');
+<section id="education">
+  <h2>Education</h2>
+  <div class="card">
+    <p><strong>M.Sc. Computer Science</strong><br>
+    School of Computer Sciences, Mahatma Gandhi University (2022–2024)</p>
+  </div>
+  <div class="card">
+    <p><strong>B.Sc. Computer Science</strong><br>
+    College of Applied Sciences (IHRD), Puthuppally (2019–2022)</p>
+  </div>
+</section>
 
-    function typeText(text, speed=60){
-      target.textContent = '';
-      let i=0;
-      clearInterval(window._typeInterval);
-      window._typeInterval = setInterval(()=>{
-        if(i>=text.length){ clearInterval(window._typeInterval); return; }
-        target.textContent += text[i++];
-      }, speed);
-    }
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Programming:</strong> C++, Python, Java</li>
+      <li><strong>AI / ML:</strong> PyTorch, TensorFlow, CUDA, NumPy, Pandas, Scikit-learn, Matlab</li>
+      <li><strong>Web Development:</strong> HTML, CSS, Bootstrap, React.js, Node.js, MySQL</li>
+      <li><strong>Soft Skills:</strong> Time Management, Problem Solving, Leadership, Analytical Thinking</li>
+    </ul>
+  </div>
+</section>
 
-    // small entrance effect: play once on load
-    window.addEventListener('load', ()=>{
-      // slight delay to let CSS settle
-      setTimeout(()=>typeText(sentence, 55), 300);
-    });
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <strong>AI-Driven Multi-Modal Analysis for NAFLD Detection</strong>
+    <ul>
+      <li>Framework for automated NAFLD detection & risk prediction using AI.</li>
+      <li>Used XGBoost & deep learning architectures (ViT, Mamba).</li>
+      <li><em>Tech:</em> Python, PyTorch, XGBoost, NumPy, Matplotlib</li>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>Deep Attentional Guided Image Filtering</strong>
+    <ul>
+      <li>CNN model for edge & structure detection using guidance images.</li>
+      <li><em>Tech:</em> Python, TensorFlow, ResNet</li>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>Attendance Management System</strong>
+    <ul>
+      <li>Java project for attendance and leave management with visualization.</li>
+      <li><em>Tech:</em> Java, NetBeans, MySQL, HTML, CSS</li>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>Online Grocery Store</strong>
+    <ul>
+      <li>Web-based e-commerce system with cart and e-payment.</li>
+      <li><em>Tech:</em> Python, MySQL, HTML, CSS</li>
+    </ul>
+  </div>
+</section>
 
-    replay.addEventListener('click', ()=>{
-      typeText(sentence, 45);
-    });
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>📍 Arpookara, Kottayam, Kerala, India</p>
+    <p>🌐 Website: <a class="link" href="https://www.atulanil.in">www.atulanil.in</a></p>
+    <p>✉️ Email: <a class="link" href="mailto:atulanilkumar@gmail.com">atulanilkumar@gmail.com</a></p>
+  </div>
+</section>
 
-    // accessibility: allow keyboard replay (R key)
-    window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='r') typeText(sentence,45); });
-  </script>
+<footer>© 2025 Atul Anilkumar — Designed in bright 90s retro style 🎨</footer>
 </body>
 </html>
